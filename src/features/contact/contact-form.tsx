@@ -85,19 +85,17 @@ export default function ContactForm() {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="rounded-full bg-emerald-500 px-6 text-zinc-950 hover:bg-emerald-400"
+          className="rounded-full bg-blue-400 px-6 text-zinc-950 hover:bg-blue-500"
         >
           {isSubmitting ? "Sending..." : "Send message"}
         </Button>
 
         {status === "success" && (
-          <p className="text-sm text-emerald-400">
-            ✓ Message sent successfully!
-          </p>
+          <p className="text-sm text-emerald-400">Message sent successfully!</p>
         )}
         {status === "error" && (
           <p className="text-sm text-red-400">
-            ✕ Failed to send. Please try again.
+            Failed to send. Please try again.
           </p>
         )}
       </div>

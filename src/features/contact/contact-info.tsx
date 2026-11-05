@@ -1,30 +1,29 @@
-import { Phone, Mail, MapPin, User } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { CallIcon, Mail01Icon, Location01Icon, UserIcon } from "hugeicons-react";
 
 interface ContactInfoItemProps {
-  icon: LucideIcon;
+  icon: React.ComponentType<{ size?: number; className?: string }>;
   title: string;
   detail: string;
 }
 
 const CONTACT_DETAILS: ContactInfoItemProps[] = [
   {
-    icon: User,
+    icon: UserIcon,
     title: "Role",
     detail: "Frontend Developer",
   },
   {
-    icon: Phone,
+    icon: CallIcon,
     title: "Phone",
     detail: "09-666500045",
   },
   {
-    icon: Mail,
+    icon: Mail01Icon,
     title: "Email",
     detail: "kkaunghtetzanthar@gmail.com",
   },
   {
-    icon: MapPin,
+    icon: Location01Icon,
     title: "Address",
     detail: "Yangon, Myanmar",
   },
@@ -34,7 +33,7 @@ function ContactInfoItem({ icon: Icon, title, detail }: ContactInfoItemProps) {
   return (
     <div className="flex items-center gap-4">
       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-zinc-800">
-        <Icon className="h-5 w-5 text-blue-400" />
+        <Icon size={20} className="text-blue-400" />
       </div>
       <div>
         <p className="text-sm text-zinc-400">{title}</p>
@@ -46,7 +45,7 @@ function ContactInfoItem({ icon: Icon, title, detail }: ContactInfoItemProps) {
 
 export default function ContactInfo() {
   return (
-    <div className="flex flex-col  gap-8">
+    <div className="flex flex-col justify-center gap-8">
       {CONTACT_DETAILS.map((item) => (
         <ContactInfoItem key={item.title} {...item} />
       ))}

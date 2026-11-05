@@ -15,9 +15,9 @@ export default function ContactPage() {
       </div>
 
       <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-8">
-        <div className="grid gap-12 lg:grid-cols-[1fr_auto]">
-          <ContactForm />
+        <div className="grid gap-12 lg:grid-cols-[2fr_3fr] items-start">
           <ContactInfo />
+          <ContactForm />
         </div>
       </div>
     </section>
