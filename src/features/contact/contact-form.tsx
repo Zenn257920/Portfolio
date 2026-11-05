@@ -9,7 +9,7 @@ import FormField from "@/components/ui/form-field";
 import { contactSchema } from "./schema";
 import type { ContactFormData } from "./schema";
 
-const WEB3FORMS_KEY = "4396c30e-b78b-4f77-9ec0-9d2ed0b68248";
+const WEB3FORMS_KEY = "71e9a54f-fb28-453c-ab6e-1a8f49ea73eb";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
