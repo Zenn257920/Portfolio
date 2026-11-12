@@ -10,12 +10,14 @@ const NAV_ITEMS = [
 
 export default function DashboardLayout() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100">
+    <div className="min-h-screen flex flex-col bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link to="/" className="text-lg font-bold tracking-tight">
             <div className="flex items-center gap-2">
-              Kaung Htet Zan Thar
+              <span className="text-lg font-bold tracking-tight">
+                Portfolio
+              </span>
               <StatusDot />
             </div>
           </Link>
@@ -37,7 +39,7 @@ export default function DashboardLayout() {
         </nav>
       </header>
 
-      <main className="mx-auto max-w-7xl px-6 py-12">
+      <main className="flex-1 w-full mx-auto max-w-7xl px-6 py-12">
         <Outlet />
       </main>
 

@@ -19,12 +19,12 @@ const TECH_STACK = [
 const SOCIAL_LINKS = [
   {
     icon: GithubIcon,
-    href: "https://github.com/yourusername",
+    href: "https://github.com/Zenn257920",
     label: "GitHub",
   },
   {
     icon: Linkedin01Icon,
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://linkedin.com/in/kaung-htet-zan-thar",
     label: "LinkedIn",
   },
   {
@@ -34,7 +34,7 @@ const SOCIAL_LINKS = [
   },
   {
     icon: Facebook01Icon,
-    href: "https://facebook.com/yourusername",
+    href: "https://facebook.com/aaa",
     label: "Facebook",
   },
 ];

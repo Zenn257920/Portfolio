@@ -30,7 +30,7 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          from_name: `${data.firstName} ${data.lastName}`,
+          from_name: data.name,
           ...data,
         }),
       });
@@ -51,12 +51,9 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-      <div className="grid grid-cols-2 gap-4">
-        <FormField label="First Name" error={errors.firstName?.message}>
-          <Input placeholder="First Name" {...register("firstName")} />
-        </FormField>
-        <FormField label="Last Name" error={errors.lastName?.message}>
-          <Input placeholder="Last Name" {...register("lastName")} />
+      <div className="">
+        <FormField label="Organization Name" error={errors.name?.message}>
+          <Input placeholder="Organization Name" {...register("name")} />
         </FormField>
       </div>
 

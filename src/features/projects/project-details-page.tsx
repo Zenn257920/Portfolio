@@ -8,7 +8,7 @@ export default function ProjectsDetailsPage() {
       <h1 className="text-4xl font-bold capitalize">
         {projectId.replaceAll("-", " ")}
       </h1>
-      <p className="text-zinc-400">Project details go here.</p>
+      <p className="text-zinc-400">Project details Page.</p>
     </section>
   );
 }
