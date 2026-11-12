@@ -1,4 +1,9 @@
-import { CallIcon, Mail01Icon, Location01Icon, UserIcon } from "hugeicons-react";
+import {
+  CallIcon,
+  Mail01Icon,
+  Location01Icon,
+  UserIcon,
+} from "hugeicons-react";
 
 interface ContactInfoItemProps {
   icon: React.ComponentType<{ size?: number; className?: string }>;
@@ -31,13 +36,16 @@ const CONTACT_DETAILS: ContactInfoItemProps[] = [
 
 function ContactInfoItem({ icon: Icon, title, detail }: ContactInfoItemProps) {
   return (
-    <div className="flex items-center gap-4">
-      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-zinc-800">
+    <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-zinc-800 sm:h-12 sm:w-12">
         <Icon size={20} className="text-blue-400" />
       </div>
-      <div>
+
+      <div className="min-w-0 flex-1">
         <p className="text-sm text-zinc-400">{title}</p>
-        <p className="text-sm font-medium text-zinc-100">{detail}</p>
+        <p className="break-all text-sm font-medium text-zinc-100 sm:break-words">
+          {detail}
+        </p>
       </div>
     </div>
   );
@@ -45,7 +53,7 @@ function ContactInfoItem({ icon: Icon, title, detail }: ContactInfoItemProps) {
 
 export default function ContactInfo() {
   return (
-    <div className="flex flex-col justify-center gap-8">
+    <div className="flex min-w-0 flex-col gap-6 sm:gap-8">
       {CONTACT_DETAILS.map((item) => (
         <ContactInfoItem key={item.title} {...item} />
       ))}

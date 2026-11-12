@@ -50,39 +50,51 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-      <div className="">
-        <FormField label="Organization Name" error={errors.name?.message}>
-          <Input placeholder="Organization Name" {...register("name")} />
-        </FormField>
-      </div>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="w-full min-w-0 space-y-5"
+    >
+      <FormField label="Organization Name" error={errors.name?.message}>
+        <Input
+          placeholder="Organization Name"
+          className="w-full min-w-0"
+          {...register("name")}
+        />
+      </FormField>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <FormField label="Email" error={errors.email?.message}>
           <Input
             type="email"
             placeholder="Email address"
+            className="w-full min-w-0"
             {...register("email")}
           />
         </FormField>
+
         <FormField label="Phone" error={errors.phone?.message}>
-          <Input type="tel" placeholder="Phone number" {...register("phone")} />
+          <Input
+            type="tel"
+            placeholder="Phone number"
+            className="w-full min-w-0"
+            {...register("phone")}
+          />
         </FormField>
       </div>
 
       <FormField label="Message" error={errors.message?.message}>
         <Textarea
           placeholder="Type your message here..."
-          className="min-h-[120px] resize-none"
+          className="min-h-[140px] w-full min-w-0 resize-none"
           {...register("message")}
         />
       </FormField>
 
-      <div className="flex items-center gap-4">
+      <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="rounded-full bg-blue-400 px-6 text-zinc-950 hover:bg-blue-500"
+          className="w-full rounded-full bg-blue-400 px-6 text-zinc-950 hover:bg-blue-500 sm:w-auto"
         >
           {isSubmitting ? "Sending..." : "Send message"}
         </Button>
@@ -90,6 +102,7 @@ export default function ContactForm() {
         {status === "success" && (
           <p className="text-sm text-emerald-400">Message sent successfully!</p>
         )}
+
         {status === "error" && (
           <p className="text-sm text-red-400">
             Failed to send. Please try again.
