@@ -8,11 +8,11 @@ import {
   MailSend01Icon,
 } from "hugeicons-react";
 import MyImage from "@/assets/me.jpg";
+import TypingText from "@/components/common/typing-text";
 
 const TECH_STACK = [
   { name: "TypeScript", color: "bg-cyan-600" },
   { name: "React", color: "bg-cyan-600" },
-  { name: "Next.js", color: "bg-zinc-700" },
   { name: "Tailwind CSS", color: "bg-cyan-600" },
 ];
 
@@ -44,12 +44,9 @@ export default function HomePage() {
     <section className="flex flex-col-reverse items-center gap-12 lg:flex-row lg:justify-between">
       <div className="max-w-xl space-y-6">
         <div className="space-y-2">
-          <h1 className="text-4xl font-bold md:text-5xl whitespace-nowrap">
-            Hi, I'm Kaung Htet Zan Thar
+          <h1 className="text-3xl font-bold leading-tight text-blue-400 sm:text-4xl">
+            <TypingText texts={["Hi, I'm Frontend Developer"]} />
           </h1>
-          <h2 className="text-2xl font-bold text-zinc-300 md:text-3xl">
-            A Frontend Developer.
-          </h2>
         </div>
 
         <p className="leading-relaxed text-zinc-400">

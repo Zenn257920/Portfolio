@@ -1,9 +1,5 @@
 import { Link } from "@tanstack/react-router";
-
-const PROJECTS = [
-  { id: "project-one", title: "Project 1", description: "Description." },
-  { id: "project-two", title: "Project 2", description: "Description." },
-];
+import { projects } from "./projects-data";
 
 export default function ProjectsPage() {
   return (
@@ -12,7 +8,7 @@ export default function ProjectsPage() {
       <p className="text-zinc-400">These are my Projects.</p>
 
       <div className="grid gap-6 sm:grid-cols-2">
-        {PROJECTS.map((project) => (
+        {projects.map((project) => (
           <Link
             key={project.id}
             to="/projects/$projectId"

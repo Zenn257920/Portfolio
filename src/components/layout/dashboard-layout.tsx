@@ -7,6 +7,7 @@ import { Menu01Icon, Cancel01Icon } from "@hugeicons/core-free-icons";
 const NAV_ITEMS = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
+  { label: "Experience", to: "/experience" },
   { label: "Projects", to: "/projects" },
   { label: "Contact", to: "/contact" },
 ] as const;
