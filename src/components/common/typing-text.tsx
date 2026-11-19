@@ -43,14 +43,14 @@ const TypingText = ({ texts, className = "" }: Props) => {
   }, [text, deleting, index, texts]);
 
   return (
-    <h1 className={className}>
+    <span className={className}>
       {text}
       <HugeiconsIcon
         icon={Cursor01Icon}
-        size={24}
+        size={20}
         className="ml-1 inline-block animate-pulse text-blue-500"
       />
-    </h1>
+    </span>
   );
 };
 

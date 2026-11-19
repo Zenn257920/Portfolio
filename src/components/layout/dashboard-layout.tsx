@@ -3,6 +3,7 @@ import { Link, Outlet } from "@tanstack/react-router";
 import StatusDot from "../common/status-dot";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Menu01Icon, Cancel01Icon } from "@hugeicons/core-free-icons";
+import { AnimatePresence, motion } from "motion/react";
 
 const NAV_ITEMS = [
   { label: "Home", to: "/" },
@@ -19,7 +20,7 @@ export default function DashboardLayout() {
 
   return (
     <div className="flex min-h-screen flex-col bg-zinc-950 text-zinc-100">
-      <header className="border-b border-zinc-800">
+      <motion.header initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }} className="sticky top-0 z-20 border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur-xl">
         <nav className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
           <div className="flex items-center justify-between">
             <Link to="/" className="text-lg font-bold tracking-tight">
@@ -59,9 +60,14 @@ export default function DashboardLayout() {
             </button>
           </div>
 
+          <AnimatePresence initial={false}>
           {isMenuOpen && (
-            <ul
+            <motion.ul
               id="mobile-navigation"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.22 }}
               className="mt-4 flex flex-col gap-2 border-t border-zinc-800 pt-4 text-sm font-medium md:hidden"
             >
               {NAV_ITEMS.map((item) => (
@@ -76,12 +82,13 @@ export default function DashboardLayout() {
                   </Link>
                 </li>
               ))}
-            </ul>
+            </motion.ul>
           )}
+          </AnimatePresence>
         </nav>
-      </header>
+      </motion.header>
 
-      <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-12 sm:px-6">
+      <main className="mx-auto min-w-0 w-full max-w-7xl flex-1 px-4 py-12 sm:px-6">
         <Outlet />
       </main>
 
